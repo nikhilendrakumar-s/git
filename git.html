@@ -1,0 +1,75 @@
+
+# STEP 1: Fork the repository on GitHub manually
+# Click the Fork button on the original repository.
+
+# STEP 2: Clone your forked repository
+git clone https://github.com/YOUR-USERNAME/REPOSITORY-NAME.git
+
+# STEP 3: Enter the project folder
+cd REPOSITORY-NAME
+
+# STEP 4: Create index.html
+cat > index.html <<'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Course Management System</title>
+</head>
+<body>
+    <h1>Online Course Management System</h1>
+    <p>Welcome to our online learning platform!</p>
+    <h2>Available Courses</h2>
+    <ul>
+        <li>Java Programming</li>
+        <li>Python Programming</li>
+        <li>Web Development</li>
+    </ul>
+    <p>Learn new skills online.</p>
+</body>
+</html>
+EOF
+
+# STEP 5: Create admin.html
+cat > admin.html <<'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <p>Welcome, Administrator!</p>
+    <h2>Manage Courses</h2>
+    <button>Add Course</button>
+    <button>Update Course</button>
+    <button>Delete Course</button>
+    <h2>Student Management</h2>
+    <p>Manage student details here.</p>
+</body>
+</html>
+EOF
+
+# STEP 6: Check file changes
+git status
+
+# STEP 7: Stage files
+git add index.html admin.html
+
+# STEP 8: Commit changes
+git commit -m "Updated online course management system"
+
+# STEP 9: Display commit history
+git log --oneline
+
+# STEP 10: Undo latest commit and keep changes staged
+git reset --soft HEAD~1
+
+# STEP 11: Verify changes
+git status
+git log --oneline
+
+# STEP 12: Commit changes again
+git commit -m "Recommit course management updates"
+
+# STEP 13: Push changes to GitHub
+git push origin main
